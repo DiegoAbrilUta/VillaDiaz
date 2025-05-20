@@ -1,0 +1,482 @@
+/* ===================== IMPORTACIÓN DE FUENTE ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+/* ===================== ESTILOS BASE ===================== */
+body {
+  background: #1C2526;
+  color: #E8DAB2;
+  font-family: 'Rock Salt', cursive;
+  border: 15px solid #8B5A2B;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+header h1,
+.pie-de-pagina,
+footer {
+  text-align: center;
+}
+
+/* ===================== NAVEGACIÓN ===================== */
+nav a {
+  color: #E8DAB2;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: #F4C430;
+}
+
+/* ===================== GALERÍA DE IMÁGENES INTERACTIVA ===================== */
+.galeria-interactiva .galeria-imagenes {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  height: 430px;
+  margin: 20px auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  border: 5px solid #8B5A2B;
+  border-radius: 15px;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.galeria-interactiva .galeria-imagenes::-webkit-scrollbar {
+  display: none;
+}
+
+.galeria-interactiva .galeria-imagenes img {
+  width: 0;
+  flex-grow: 1;
+  max-width: 300px;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.galeria-interactiva .galeria-imagenes img:hover {
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+  cursor: crosshair;
+}
+
+/* ===================== IMÁGENES GRANDES Y MODAL ===================== */
+.foto-grande img,
+.contenido-modal {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border: 5px solid #8B5A2B;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* ===================== MODAL DE IMAGEN ===================== */
+.modal-imagen {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.9);
+}
+
+.contenido-modal {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  border: 5px solid #F4C430;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+.cerrar {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===================== MAPA RESPONSIVO ===================== */
+.mapa {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  padding-bottom: 38%;
+  height: 0;
+  margin: 20px auto;
+  border: 5px solid #8B5A2B;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mapa iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ===================== IMÁGENES DE SECCIÓN ===================== */
+.ubicacion-imagen,
+.menu-imagen,
+.menu-especial-imagen {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ubicacion-imagen:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.menu-imagen:hover,
+.menu-especial-imagen:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* ===================== ANIMACIONES ===================== */
+.animada {
+  animation: latido 2s infinite alternate ease-in-out;
+}
+
+@keyframes latido {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.03); }
+}
+
+/* Menú Especial con Resplandor */
+.menu-especial-imagen {
+  animation: resplandor 2s infinite alternate ease-in-out;
+  box-shadow: 0 0 15px rgba(244,196,48,0.5);
+}
+
+@keyframes resplandor {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(244,196,48,0.3);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(244,196,48,0.6);
+  }
+}
+
+/* Leyenda de Especial */
+.especial-leyenda {
+  font-size: 1.2rem;
+  color: #F4C430;
+  font-style: italic;
+  animation: parpadeo 2s infinite;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Reloj Digital con Efecto */
+.reloj-digital {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #F4C430;
+  font-family: 'Rock Salt', cursive;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+  margin-top: 10px;
+  animation: resplandor-reloj 1s infinite alternate ease-in-out;
+}
+
+@keyframes resplandor-reloj {
+  0% {
+    text-shadow: 0 0 10px #F4C430, 0 0 20px #F4C430;
+  }
+  100% {
+    text-shadow: 0 0 20px #F4C430, 0 0 30px #F4C430;
+  }
+}
+
+/* ===================== ÍCONOS DE REDES SOCIALES ===================== */
+.iconos-redes a {
+  display: inline-block;
+  margin: 10px;
+  color: #E8DAB2;
+  font-size: 3rem;
+  transition: color 0.3s ease;
+}
+
+.iconos-redes a:hover {
+  color: #F4C430;
+}
+
+.iconos-redes .social-name {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+/* ===================== PIE DE PÁGINA ===================== */
+footer {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #F4C430;
+  border-top: 1px solid #8B5A2B;
+  padding-top: 60px;
+  position: relative;
+  min-height: 130px;
+}
+
+.footer-contenedor {
+  position: relative;
+}
+
+.autor-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #F4C430;
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.6s ease-in-out;
+}
+
+.autor-img:hover {
+  transform: translateX(-50%) rotate(360deg);
+}
+
+.footer-texto {
+  margin-top: 10px;
+}
+
+/* ===================== SOMBRAS PERSONALIZADAS ===================== */
+.sombra-diario {
+  box-shadow: 0 0 25px rgba(244,196,48,0.6);
+}
+
+.sombra-nocturno {
+  box-shadow: 0 0 25px rgba(138,43,226,0.6);
+}
+
+.sombra-especial {
+  box-shadow: 0 0 25px rgba(255,99,71,0.6);
+}
+
+/* ===================== CONTENEDOR DEL RELOJ ===================== */
+.reloj-container {
+  text-align: center;
+  padding: 20px;
+  margin: 10px auto 0;
+  border: 3px solid #F4C430;
+  border-radius: 10px;
+  background: #2E3B3C;
+  max-width: 400px;
+  box-shadow: 0 0 20px #F4C430;
+  width: 90%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.texto-grande {
+  font-size: 2rem;
+  color: #F4C430;
+  margin-bottom: 5px;
+}
+
+.texto-mediano {
+  font-size: 1.5rem;
+  color: #E8DAB2;
+  margin-bottom: 5px;
+}
+
+.hora {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #F4C430;
+}
+
+.fecha {
+  margin-top: 15px;
+  font-size: 1.5em;
+  color: #F4C430;
+}
+
+.fecha span {
+  font-size: 1.1rem;
+  margin: 0 5px;
+}
+
+/* ===================== ESTADO DE SERVICIO ===================== */
+.abierto-vertical {
+  color: #F4C430;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Rock Salt', cursive;
+  margin: 10px;
+  user-select: none;
+}
+
+.abierto-vertical.abierto {
+  color: green;
+}
+
+.abierto-vertical.cerrado {
+  color: red;
+}
+
+/* ===================== ESTILO BLOQUEADO ===================== */
+.bloqueado {
+  pointer-events: none;
+  filter: grayscale(100%) brightness(50%);
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===================== ELIMINAR ESTILOS DE IMÁGENES ESPECÍFICAS ===================== */
+img[src*="ambato-caricatura"] {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0 !important;
+}
+
+/* ===================== RESPONSIVE MEDIA QUERIES ===================== */
+
+/* Ajustes para pantallas medianas y menores */
+@media (max-width: 768px) {
+  nav a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .galeria-interactiva .galeria-imagenes {
+    height: 300px;
+    max-width: 100%;
+  }
+
+  .galeria-interactiva .galeria-imagenes img {
+    max-width: 200px;
+  }
+
+  .reloj-digital {
+    font-size: 2rem;
+  }
+
+  .reloj-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .texto-grande {
+    font-size: 1.5rem;
+  }
+
+  .texto-mediano {
+    font-size: 1.2rem;
+  }
+
+  .hora {
+    font-size: 2rem;
+  }
+
+  .fecha {
+    font-size: 1.2rem;
+  }
+
+  .abierto-vertical {
+    font-size: 1rem;
+    margin: 5px;
+  }
+
+  .ubicacion-imagen,
+  .menu-imagen,
+  .menu-especial-imagen {
+    max-width: 90%;
+  }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  nav a {
+    margin: 0 8px;
+    font-size: 0.8rem;
+  }
+
+  .galeria-interactiva .galeria-imagenes {
+    height: 250px;
+  }
+
+  .galeria-interactiva .galeria-imagenes img {
+    max-width: 150px;
+  }
+
+  .reloj-digital {
+    font-size: 1.6rem;
+  }
+
+  .reloj-container {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  .texto-grande {
+    font-size: 1.2rem;
+  }
+
+  .texto-mediano {
+    font-size: 1rem;
+  }
+
+  .hora {
+    font-size: 1.5rem;
+  }
+
+  .fecha {
+    font-size: 1rem;
+  }
+
+  .abierto-vertical {
+    font-size: 0.9rem;
+    margin: 3px;
+  }
+}

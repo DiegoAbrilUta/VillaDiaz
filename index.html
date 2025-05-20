@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Villa DíAZ</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilos.css" />
+
+  <style>
+    body, body * {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      -webkit-touch-callout: none !important;
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" oncopy="return false">
+
+  <header>
+    <h1>Villa DíAZ</h1>
+  </header>
+
+  <div class="text-center mb-4">
+    <p style="font-size: 1.5rem; font-style: italic; color: #F4C430;">
+      "La sazón de Ambato en cada bocado, ¡ven a disfrutarla en Villa DíAZ!"
+    </p>
+    <div>
+      <i class="bi bi-fire" style="font-size: 3.5rem; color: #F4C430;"></i>
+    </div>
+    <div id="horario_atencion">
+      <img src="img/horario.webp" alt="HorarioAtencion" style="cursor: pointer;" onclick="mostrarModal(this.src)" draggable="false" class="menu-imagen" />
+    </div>
+
+    <div class="reloj-container d-flex align-items-center justify-content-center position-relative mt-4">
+      <div id="texto-vertical" class="texto-vertical izquierda">ABIERTO</div>
+
+      <div class="clock-box text-center mx-3">
+        <div id="dia-semana" class="texto-grande"></div>
+        <div id="hora" class="hora display-5 fw-bold">00:00:00</div>
+        <div class="texto-mediano">
+          <span id="dia"></span> de <span id="mes"></span> de <span id="anio-reloj"></span>
+        </div>
+      </div>
+
+      <div id="texto-vertical-derecho" class="texto-vertical derecha">ABIERTO</div>
+    </div>
+  </div>
+
+  <section id="acerca" class="mb-5">
+    <h2>Acerca de</h2>
+    <p>Bienvenidos a Villa DíAZ, donde la tradición y el sabor se encuentran en cada plato.</p>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img id="MenuDiario" src="img/MenuDiario.webp" alt="Menú Diario" class="menu-imagen animada sombra-diario" onclick="mostrarModal(this.src)" draggable="false" />
+        <div class="pie-de-pagina">Menú del Día</div>
+      </div>
+      <div class="col-md-4 text-center">
+        <img id="MenuNocturno" src="img/MenuNocturno.webp" alt="Menú Nocturno" class="menu-imagen animada sombra-nocturno" onclick="mostrarModal(this.src)" draggable="false" />
+        <div class="pie-de-pagina">Menú Nocturno</div>
+      </div>
+      <div class="col-md-4 text-center">
+        <img id="MenuEspecial" src="img/MenuEspecial.webp" alt="Menú Especial" class="menu-especial-imagen animada sombra-especial" onclick="mostrarModal(this.src)" draggable="false" />
+        <div class="pie-de-pagina especial-leyenda">¡Disfrútalo cada sábado!</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ubicacion" class="galeria-interactiva mb-5">
+    <h2>Ubicación</h2>
+    <p>Nos encontramos en Ambato, Ficoa: Toronjas & Mandarinas.</p>
+    <div class="galeria-imagenes">
+      <img src="img/ambato-caricatura.webp" alt="Ubicación de Villa DíAZ" class="ubicacion-imagen" draggable="false" />
+      <img src="img/ambato-caricatura_2.webp" alt="Ubicación de Villa DíAZ" class="ubicacion-imagen" draggable="false" />
+      <img src="img/ambato-caricatura_3.webp" alt="Ubicación de Villa DíAZ" class="ubicacion-imagen" draggable="false" />
+      <img src="img/hornado_pt.webp" alt="Ubicación de Villa DíAZ" class="ubicacion-imagen" draggable="false" />
+      <img src="img/ceviche_pt.webp" alt="Ubicación de Villa DíAZ" class="ubicacion-imagen" draggable="false" />
+      <img src="img/llapingacho_pt.webp" alt="Ubicación de Villa DíAZ" class="ubicacion-imagen" draggable="false" />
+    </div>
+    <p align="center">Ficoa, corazón agrícola de Ambato, Ecuador, donde la tradición y la frescura se unen.</p>
+  </section>
+
+  <section id="contacto" class="mb-5">
+    <h2>Contacto</h2>
+    <div class="row">
+      <div class="col-md-6 mapa mb-3 mb-md-0">
+        <iframe 
+          src="https://www.google.com/maps?q=Toronjas+y+Mandarinas,+Ambato,+Ecuador&output=embed" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          oncontextmenu="return false"
+          ondragstart="return false"
+        ></iframe>
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center align-items-center iconos-redes">
+        <a href="https://wa.me/593989756564" target="_blank" oncontextmenu="return false">
+          <i class="bi bi-whatsapp" style="color: #25D366;"></i>
+          <div class="social-name">WhatsApp 1</div>
+        </a>
+        <a href="https://wa.me/593998417137" target="_blank" oncontextmenu="return false">
+          <i class="bi bi-whatsapp" style="color: #50E3C2;"></i>
+          <div class="social-name">WhatsApp 2</div>
+        </a>
+        <a href="https://www.facebook.com/san.diz.289907" target="_blank" oncontextmenu="return false">
+          <i class="bi bi-facebook"></i>
+          <div class="social-name">Facebook</div>
+        </a>
+        <a href="https://www.instagram.com/mayraabril4/" target="_blank" oncontextmenu="return false">
+          <i class="bi bi-instagram"></i>
+          <div class="social-name">Instagram</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal único para mostrar cualquier imagen -->
+  <div id="modal" class="modal-imagen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;" onclick="cerrarModal()">
+    <span class="cerrar" style="position:absolute; top:20px; right:30px; font-size: 3rem; color: white; cursor:pointer;" onclick="cerrarModal(event)">×</span>
+    <img class="contenido-modal" id="imgModal" draggable="false" style="max-width:90%; max-height:90%;" />
+  </div>
+
+  <footer>
+    <div class="footer-contenedor">
+      <a href="https://www.facebook.com/profile.php?id=61576194304206" target="_blank" oncontextmenu="return false">
+        <img src="img/autor.webp" alt="Autor" class="autor-img" draggable="false" />
+      </a>
+      <div class="footer-texto">
+        <span>© Villa DíAZ - Todos los derechos reservados <span id="anio">2025</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/acciones.js"></script>
+
+  <script>
+    // Bloqueos básicos para evitar copiar o usar teclas ctrl + ciertas letras
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+      }
+    });
+    document.addEventListener('dragstart', e => e.preventDefault());
+    document.addEventListener('copy', e => e.preventDefault());
+
+    // Para evitar que el clic en la X del modal cierre todo y provoque conflictos
+    function cerrarModal(event) {
+      if(event) event.stopPropagation();
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('imgModal').src = '';
+    }
+
+    // Función para mostrar modal, definida también en js/acciones.js si quieres
+    function mostrarModal(src) {
+      const modal = document.getElementById('modal');
+      const img = document.getElementById('imgModal');
+      img.src = src;
+      modal.style.display = 'flex';
+    }
+  </script>
+
+</body>
+</html>
